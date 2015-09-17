@@ -21,20 +21,12 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-//	    LineChart mLinechart = new LineChart(this);
-//
-//	    RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayout);
-//	    rl.addView(mLinechart);
-	    
-//	    rl.add(mLinechart);
 	    
 		LineChart mLinechart = (LineChart) findViewById(R.id.chart);
 		LineData data = setData();
 
 
 		mLinechart.setData(data);
-//		mLinechart.setBackgroundColor(Color.BLUE);
 		mLinechart.invalidate();
 
 	}
