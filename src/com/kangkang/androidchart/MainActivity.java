@@ -1,64 +1,87 @@
 package com.kangkang.androidchart;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.YAxis.AxisDependency;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Color;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+import com.github.mikephil.charting.utils.Utils;
+import com.kangkang.androidchart.demoactivity.HomePageChartActivity;
+
+
+public class MainActivity extends Activity implements OnItemClickListener {
+
+	RelativeLayout mainLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-	    
-		LineChart mLinechart = (LineChart) findViewById(R.id.chart);
-		LineData data = setData();
 
+		// initialize the utilities
+		Utils.init(this);
 
-		mLinechart.setData(data);
-		mLinechart.invalidate();
-
-	}
-
-	private LineData setData() {
-		ArrayList<Entry> valsComp1 = new ArrayList<Entry>();
-		ArrayList<Entry> valsComp2 = new ArrayList<Entry>();
+		ArrayList<ContentItem> objects = new ArrayList<ContentItem>();
 		
-	    Entry c1e1 = new Entry(100.000f, 0); // 0 == quarter 1
-	    valsComp1.add(c1e1);
-	    Entry c1e2 = new Entry(50.000f, 1); // 1 == quarter 2 ...
-	    valsComp1.add(c1e2);
-	    // and so on ...
-
-	    Entry c2e1 = new Entry(120.000f, 0); // 0 == quarter 1
-	    valsComp2.add(c2e1);
-	    Entry c2e2 = new Entry(110.000f, 1); // 1 == quarter 2 ...
-	    valsComp2.add(c2e2);
-	    LineDataSet setComp1 = new LineDataSet(valsComp1, "Company 1");
-	    setComp1.setAxisDependency(AxisDependency.LEFT);
-	    LineDataSet setComp2 = new LineDataSet(valsComp2, "Company 2");
-	    setComp2.setAxisDependency(AxisDependency.LEFT);
-	    ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
-	    dataSets.add(setComp1);
-	    dataSets.add(setComp2);
-
-	    ArrayList<String> xVals = new ArrayList<String>();
-	    xVals.add("1.Q"); xVals.add("2.Q"); xVals.add("3.Q"); xVals.add("4.Q"); 
-	    LineData data = new LineData(xVals, dataSets);
-	    return data;
-	
 		
+		
+
+		objects.add(new ContentItem("HomePageChartActivity",
+				""));
+		objects.add(new ContentItem("BloodPressureAnalysisCurveActivity)",
+				""));
+		objects.add(new ContentItem("BloodPressureAnalysisDiaramActivity",
+				""));
+		objects.add(new ContentItem("BloodPressureMonitorActivity",
+				""));
+		objects.add(new ContentItem("BloodSugerAnalysisCurveActivity",
+				""));
+		objects.add(new ContentItem("BloodSugerAnalysisDiagramActivity",
+				""));
+		objects.add(new ContentItem("BloodSugerMonitorActivity",
+				""));
+		objects.add(new ContentItem("BodyFatAnalysisCurveActivity",
+				""));
+		objects.add(new ContentItem("BodyFatAnalysisDiagramActivity",
+				""));
+		objects.add(new ContentItem("BodyFatMonitorActivity",
+				""));
+		objects.add(new ContentItem("BodyHeightActivity",
+				""));
+		objects.add(new ContentItem("BodyHeightAnalysisActivity",
+				""));
+		objects.add(new ContentItem("BodyWeightActivity",
+				""));
+		objects.add(new ContentItem(
+				"TemperatureActivity",
+				""));
+		objects.add(new ContentItem(
+				"TemperatureAnalysisActivity",
+				""));
+
+
+		MyAdapter adapter = new MyAdapter(this, objects);
+
+		ListView lv = (ListView) findViewById(R.id.listView1);
+		lv.setAdapter(adapter);
+
+		lv.setOnItemClickListener(this);
+
 	}
 
 	@Override
@@ -78,5 +101,73 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int pos, long arg3) {
+		Intent i;
+
+		switch (pos) {
+		
+		case 0:
+//			i = new Intent(this, HomePageChartActivity.class);
+//			startActivity(i);
+			break;
+		}
+//        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+
+	}
+
+	private class ContentItem {
+		String name;
+		String desc;
+
+		public ContentItem(String n, String d) {
+			name = n;
+			desc = d;
+		}
+	}
+
+	private class MyAdapter extends ArrayAdapter<ContentItem> {
+
+		public MyAdapter(Context context, List<ContentItem> objects) {
+			super(context, 0, objects);
+		}
+
+		@SuppressLint("InflateParams")
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+
+			ContentItem c = getItem(position);
+
+			ViewHolder holder = null;
+
+			if (convertView == null) {
+
+				holder = new ViewHolder();
+
+				convertView = LayoutInflater.from(getContext()).inflate(
+						R.layout.list_item, null);
+				holder.tvName = (TextView) convertView
+						.findViewById(R.id.tvName);
+				holder.tvDesc = (TextView) convertView
+						.findViewById(R.id.tvDesc);
+
+				convertView.setTag(holder);
+
+			} else {
+				holder = (ViewHolder) convertView.getTag();
+			}
+
+			holder.tvName.setText(c.name);
+			holder.tvDesc.setText(c.desc);
+
+			return convertView;
+		}
+
+		private class ViewHolder {
+
+			TextView tvName, tvDesc;
+		}
 	}
 }
