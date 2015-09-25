@@ -21,7 +21,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.utils.Utils;
+import com.kangkang.androidchart.demoactivity.BloodPressureAnalysisCurveActivity;
+import com.kangkang.androidchart.demoactivity.BloodPressureAnalysisDiagramActivity;
+import com.kangkang.androidchart.demoactivity.BloodPressureMonitorActivity;
+import com.kangkang.androidchart.demoactivity.BloodSugerAnalysisCurveActivity;
+import com.kangkang.androidchart.demoactivity.BloodSugerMonitorActivity;
+import com.kangkang.androidchart.demoactivity.BodyFatAnalysisCurveActivity;
+import com.kangkang.androidchart.demoactivity.BodyFatAnalysisDiagramActivity;
+import com.kangkang.androidchart.demoactivity.BodyFatMonitorActivity;
+import com.kangkang.androidchart.demoactivity.BodyHeightActivity;
+import com.kangkang.androidchart.demoactivity.BodyHeightAnalysisActivity;
+import com.kangkang.androidchart.demoactivity.BodyWeightActivity;
 import com.kangkang.androidchart.demoactivity.HomePageChartActivity;
+import com.kangkang.androidchart.demoactivity.TemperatureActivity;
+import com.kangkang.androidchart.demoactivity.TemperatureAnalysisActivity;
 
 
 public class MainActivity extends Activity implements OnItemClickListener {
@@ -63,15 +76,13 @@ public class MainActivity extends Activity implements OnItemClickListener {
 				""));
 		objects.add(new ContentItem("BodyHeightActivity",
 				""));
-		objects.add(new ContentItem("BodyHeightAnalysisActivity",
-				""));
 		objects.add(new ContentItem("BodyWeightActivity",
 				""));
-		objects.add(new ContentItem(
-				"TemperatureActivity",
+		objects.add(new ContentItem("BodyHeightAnalysisActivity",
 				""));
-		objects.add(new ContentItem(
-				"TemperatureAnalysisActivity",
+		objects.add(new ContentItem("TemperatureActivity",
+				""));
+		objects.add(new ContentItem("TemperatureAnalysisActivity",
 				""));
 
 
@@ -110,9 +121,66 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		switch (pos) {
 		
 		case 0:
-//			i = new Intent(this, HomePageChartActivity.class);
-//			startActivity(i);
+			i = new Intent(this, HomePageChartActivity.class);
+			startActivity(i);
 			break;
+		case 1:
+			i = new Intent(this, BloodPressureAnalysisCurveActivity.class);
+			startActivity(i);
+			break;
+		case 2:
+			i = new Intent(this, BloodPressureAnalysisDiagramActivity.class);
+			startActivity(i);
+			break;
+		case 3:
+			i = new Intent(this, BloodPressureMonitorActivity.class);
+			startActivity(i);
+			break;
+		case 4:
+			i = new Intent(this, BloodSugerAnalysisCurveActivity.class);
+			startActivity(i);
+			break;
+		case 5:
+			i = new Intent(this, BloodPressureAnalysisDiagramActivity.class);
+			startActivity(i);
+			break;
+		case 6:
+			i = new Intent(this, BloodSugerMonitorActivity.class);
+			startActivity(i);
+			break;
+		case 7:
+			i = new Intent(this, BodyFatAnalysisCurveActivity.class);
+			startActivity(i);
+			break;
+		case 8:
+			i = new Intent(this, BodyFatAnalysisDiagramActivity.class);
+			startActivity(i);
+			break;
+		case 9:
+			i = new Intent(this, BodyFatMonitorActivity.class);
+			startActivity(i);
+			break;
+		case 10:
+			i = new Intent(this, BodyHeightActivity.class);
+			startActivity(i);
+			break;
+		case 11:
+			i = new Intent(this, BodyHeightAnalysisActivity.class);
+			startActivity(i);
+			break;
+		case 12:
+			i = new Intent(this, BodyWeightActivity.class);
+			startActivity(i);
+			break;
+		case 13:
+			i = new Intent(this, TemperatureActivity.class);
+			startActivity(i);
+			break;
+		case 14:
+			i = new Intent(this, TemperatureAnalysisActivity.class);
+			startActivity(i);
+			break;
+			
 		}
 //        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 

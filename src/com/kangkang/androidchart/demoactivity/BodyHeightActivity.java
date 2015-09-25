@@ -1,5 +1,16 @@
 package com.kangkang.androidchart.demoactivity;
 
-public class BodyHeightActivity {
+import android.app.Activity;
+import android.os.Bundle;
+
+import com.kangkang.androidchart.R;
+
+public class BodyHeightActivity extends Activity{
+		@Override
+		protected void onCreate(Bundle savedInstanceState) {
+			// TODO Auto-generated method stub
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.body_height);
+		}
 
 }

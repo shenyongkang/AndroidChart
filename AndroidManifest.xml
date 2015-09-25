@@ -23,63 +23,63 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomePageChartActivity"
+            android:name="com.kangkang.androidchart.demoactivity.HomePageChartActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BloodPressureAnalysisCurveActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BloodPressureAnalysisDiagramActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BloodPressureAnalysisDiaramActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BloodPressureAnalysisCurveActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BloodPressureMonitorActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BloodPressureMonitorActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BloodSugerAnalysisCurveActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BloodSugerAnalysisCurveActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BloodSugerAnalysisDiagramActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BloodSugerAnalysisDiagramActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BloodSugerMonitorActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BloodSugerMonitorActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BodyFatAnalysisCurveActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BodyFatAnalysisCurveActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BodyFatAnalysisDiagramActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BodyFatAnalysisDiagramActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BodyFatMonitorActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BodyFatMonitorActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BodyHeightActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BodyHeightActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BodyHeightAnalysisActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BodyHeightAnalysisActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".BodyWeightActivity"
+            android:name="com.kangkang.androidchart.demoactivity.BodyWeightActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".TemperatureActivity"
+            android:name="com.kangkang.androidchart.demoactivity.TemperatureActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".TemperatureAnalysisActivity"
+            android:name="com.kangkang.androidchart.demoactivity.TemperatureAnalysisActivity"
             android:label="@string/app_name" >
         </activity>
     </application>
