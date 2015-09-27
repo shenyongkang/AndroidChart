@@ -1,5 +1,6 @@
 package com.kangkang.androidchart.demoactivity;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -8,9 +9,11 @@ import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis.XAxisPosition;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.YAxisValueFormatter;
 import com.kangkang.androidchart.R;
 
 public class HomePageChartActivity extends Activity{
@@ -32,12 +35,25 @@ public class HomePageChartActivity extends Activity{
 		setChart(myChart, values);
 		
 		
-		
-
-		
 
 	}
+	
+	public class MyYAxisValueFormatter implements YAxisValueFormatter{
 
+	    private DecimalFormat mFormat;
+
+	    public MyYAxisValueFormatter () {
+	        mFormat = new DecimalFormat("#"); // use one decimal
+	    }
+
+	    @Override
+	    public String getFormattedValue(float value, YAxis yAxis) {
+	        // write your logic here
+	        // access the YAxis object to get more information
+	        return mFormat.format(value) + "K"; // e.g. append a dollar-sign
+	    }
+
+	}
 	private void setChart(LineChart myChart, ArrayList<Float> values) {
 		ArrayList<String> dataLabels = new ArrayList<String>();
 		for(int i=0;i<= 24;++i){
@@ -51,9 +67,7 @@ public class HomePageChartActivity extends Activity{
 		LineDataSet lineDataSet = new LineDataSet(dataEntries,"Data Set 1");
 		
 		int[] colors = new int[3];
-//		t colors = [UIColor(red: 77/255, green: 190/255, blue: 206/255, alpha: 0.9),
-//		            UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 0.9),
-//		            UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1),]
+
 		colors[0] = Color.argb(230, 77, 190, 206);
 		colors[1] = Color.argb(230, 150, 150, 150);
 		colors[2] = Color.argb(255, 50, 50, 50);
@@ -62,6 +76,11 @@ public class HomePageChartActivity extends Activity{
 		lineDataSet.setDrawCircleHole(false);
 		lineDataSet.setCircleSize((float) 0.0);
 		lineDataSet.setDrawValues(false);
+		
+		
+		
+		
+		
 		lineDataSet.setLineWidth((float) 1.0);
 		lineDataSet.setDrawFilled(true);
 		lineDataSet.setFillColor(colors[0]);
@@ -74,19 +93,19 @@ public class HomePageChartActivity extends Activity{
 		myChart.getXAxis().setAxisLineWidth((float) 2.0);
 		myChart.getXAxis().setTextSize(12);
 		myChart.getXAxis().setLabelsToSkip(5);
+		myChart.getXAxis().setAvoidFirstLastClipping(true);
 		myChart.getAxisLeft().setEnabled(true);
 		myChart.getAxisRight().setEnabled(false);
 		myChart.getAxisLeft().setDrawAxisLine(false);
 		myChart.getAxisLeft().setGridColor(colors[1]);
 		myChart.getAxisLeft().setGridLineWidth((float) 0.5);
 		myChart.getAxisLeft().setLabelCount(3, false);
-		myChart.getAxisLeft().setTextSize(12);
+		myChart.getAxisLeft().setTextSize(16);
 		myChart.getAxisLeft().setTextColor(colors[1]);
-		
-		
-
-		
-		
+		myChart.getAxisLeft().setValueFormatter(new MyYAxisValueFormatter());
+		myChart.setDescription("");
+		myChart.getLegend().setEnabled(false);
+		myChart.setScaleEnabled(false);	
 		
 		
 		
