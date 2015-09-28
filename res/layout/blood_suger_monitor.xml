@@ -3,10 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/bloodPressureAnalysisCurve"
+
+    
+        <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/bloodSugerMonitorChart1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp"
+        
+        />
+        
+        <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/bloodSugerMonitorChart2"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/bloodSugerMonitorChart1"
+        android:layout_height="300dp" />
     
 
 </RelativeLayout>

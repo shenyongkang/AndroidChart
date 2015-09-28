@@ -11,6 +11,10 @@ public class BloodPressureAnalysisDiagramActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.blood_pressure_analysis_diagram);
+		
+
+		
+		
 	}
 
 }

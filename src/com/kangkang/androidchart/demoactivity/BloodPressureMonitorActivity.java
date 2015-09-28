@@ -28,7 +28,7 @@ public class BloodPressureMonitorActivity extends Activity{
 		double[][] values = {{141.0, 134.0, 126.0, 133.0, 122.0, 136.0, 134.0},
 		                      {111.0, 94.0, 116.0, 103.0, 112.0, 126.0, 114.0}, 
 		                      {72.0, 64.0, 86.0, 73.0, 92.0, 76, 60}};
-		String[] labels = {"ÖÜÈÕ" , "ÖÜÒ»","ÖÜ¶ş", "ÖÜÈı",  "ÖÜËÄ", "ÖÜÎå", "ÖÜÈÕ"};
+		String[] labels = {"å‘¨æ—¥" , "å‘¨ä¸€","å‘¨äºŒ", "å‘¨ä¸‰",  "å‘¨å››", "å‘¨äº”", "å‘¨å…­"};
 		LineChart myChart = (LineChart) findViewById(R.id.bloodPressureAnalysisMonitor);
 		
 		setChart(myChart, values, labels);
@@ -70,15 +70,8 @@ public class BloodPressureMonitorActivity extends Activity{
 			dataLabels.add("");
 			dataLabels.add(labels[i]);
 		}
-//		ArrayList<ArrayList<Integer>> xValues = new ArrayList<ArrayList<Integer>>();
-//		for(int i=0;i<values.length;++i){
-//			ArrayList<Integer> tempXValues = new ArrayList<Integer>();
-//			for(int j=0;j<values[i].length;++j){
-//				tempXValues.add(Integer.valueOf(2*j+1));
-//			}
-//			xValues.add(tempXValues);
-//		}
-//		
+		dataLabels.add("");
+			
 		ArrayList<ArrayList<Entry>> dataEntries = new ArrayList<ArrayList<Entry>>();
 		for(int i=0;i<values.length;++i){
 			ArrayList<Entry> entries = new ArrayList<Entry>();
@@ -89,9 +82,9 @@ public class BloodPressureMonitorActivity extends Activity{
 		}
 		
 		ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
-		dataSets.add(new LineDataSet(dataEntries.get(0), "ÊÕËõÑ¹"));
-		dataSets.add(new LineDataSet(dataEntries.get(1), "ÊæÕÅÑ¹"));
-		dataSets.add(new LineDataSet(dataEntries.get(2), "ĞÄÂÊ"));
+		dataSets.add(new LineDataSet(dataEntries.get(0), "æ”¶ç¼©å‹"));
+		dataSets.add(new LineDataSet(dataEntries.get(1), "èˆ’å¼ å‹"));
+		dataSets.add(new LineDataSet(dataEntries.get(2), "å¿ƒç‡"));
 		for(int i=0;i<dataSets.size();++i){
 			dataSets.get(i).setColor(colors[i]);
 			dataSets.get(i).setDrawCircleHole(false);
@@ -112,6 +105,8 @@ public class BloodPressureMonitorActivity extends Activity{
 		xAxis.setSpaceBetweenLabels(1);
 		xAxis.setAvoidFirstLastClipping(true);
 		xAxis.setLabelsToSkip(0);
+		xAxis.setTextSize(15f);
+		xAxis.setSpaceBetweenLabels(1);
 		myChart.getAxisRight().setEnabled(false);
 		YAxis leftAxis = myChart.getAxisLeft();
 		leftAxis.setStartAtZero(false);
@@ -138,7 +133,7 @@ public class BloodPressureMonitorActivity extends Activity{
 		leftAxis.addLimitLine(targetLine90);
 		myChart.setDescription("");
 		myChart.setScaleEnabled(false);
-		
+		myChart.getLegend().setFormSize(12f);
 		
 		
 		
