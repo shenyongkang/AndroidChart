@@ -2,11 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/bloodPressureAnalysisCurve"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bloodPressureAnalysisDiagramChart1"
+        android:layout_width="180sp"
+        android:layout_height="180sp"
+        />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bloodPressureAnalysisDiagramChart2"
+        android:layout_width="220sp"
+        android:layout_height="180sp"
+        android:layout_toEndOf="@id/bloodPressureAnalysisDiagramChart1"
+        android:layout_toRightOf="@id/bloodPressureAnalysisDiagramChart1" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/bloodPressureAnalysisDiagramChart3"
+        android:layout_width="200dp"
+        android:layout_height="200dp" 
+        android:layout_below="@id/bloodPressureAnalysisDiagramChart1"/>
 
 </RelativeLayout>

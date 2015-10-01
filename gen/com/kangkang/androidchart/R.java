@@ -25,18 +25,29 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000b;
+        public static final int action_settings=0x7f080016;
+        public static final int bloodFatAnalysisDiagramChart1=0x7f08000d;
+        public static final int bloodFatAnalysisDiagramChart2=0x7f08000e;
+        public static final int bloodFatAnalysisDiagramChart3=0x7f08000f;
         public static final int bloodPressureAnalysisCurve=0x7f080001;
-        public static final int bloodPressureAnalysisDiagram=0x7f080003;
-        public static final int bloodPressureAnalysisMonitor=0x7f080002;
-        public static final int bloodSugerMonitorChart1=0x7f080004;
-        public static final int bloodSugerMonitorChart2=0x7f080005;
-        public static final int bodyFatAnalysisCurve=0x7f080006;
-        public static final int bodyFatMonitor=0x7f080007;
-        public static final int homePageChart=0x7f080008;
+        public static final int bloodPressureAnalysisDiagramChart1=0x7f080002;
+        public static final int bloodPressureAnalysisDiagramChart2=0x7f080003;
+        public static final int bloodPressureAnalysisDiagramChart3=0x7f080004;
+        public static final int bloodPressureAnalysisMonitor=0x7f080005;
+        public static final int bloodSugerAnalysisCurve=0x7f080006;
+        public static final int bloodSugerAnalysisDiagramChart1=0x7f080007;
+        public static final int bloodSugerAnalysisDiagramChart2=0x7f080008;
+        public static final int bloodSugerAnalysisDiagramChart3=0x7f080009;
+        public static final int bloodSugerMonitorChart1=0x7f08000a;
+        public static final int bloodSugerMonitorChart2=0x7f08000b;
+        public static final int bodyFatAnalysisCurve=0x7f08000c;
+        public static final int bodyFatMonitor=0x7f080010;
+        public static final int bodyHeight=0x7f080011;
+        public static final int bodyWeight=0x7f080012;
+        public static final int homePageChart=0x7f080013;
         public static final int listView1=0x7f080000;
-        public static final int tvDesc=0x7f08000a;
-        public static final int tvName=0x7f080009;
+        public static final int tvDesc=0x7f080015;
+        public static final int tvName=0x7f080014;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

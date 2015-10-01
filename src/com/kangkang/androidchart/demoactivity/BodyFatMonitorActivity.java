@@ -27,7 +27,7 @@ public class BodyFatMonitorActivity extends Activity {
 
 		double[][] values = { { 71.0, 74.0, 66.0, 83.0, 42.0, 76.0, 74.0 },
 				{ 41.0, 44.0, 36.0, 43.0, 42.0, 46.0, 44.0 }, { 22.0, 24.0, 23.0, 23.0, 22.0, 24.0, 26.60 } };
-		String[] labels = { "å‘¨æ—¥", "å‘¨ä¸€", "å‘¨äºŒ", "å‘¨ä¸‰", "å‘¨å››", "å‘¨äº”", "å‘¨å…­" };
+		String[] labels = { "ÖÜÈÕ", "ÖÜÒ»", "ÖÜ¶ş", "ÖÜÈı", "ÖÜËÄ", "ÖÜÎå", "ÖÜÁù" };
 		LineChart lineChart = (LineChart) findViewById(R.id.bodyFatMonitor);
 
 		setChart(lineChart, values, labels);
@@ -61,8 +61,8 @@ public class BodyFatMonitorActivity extends Activity {
 		}
 
 		ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
-		dataSets.add(new LineDataSet(dataEntries.get(0), "ä½“é‡"));
-		dataSets.add(new LineDataSet(dataEntries.get(1), "ä½“è„‚ç‡"));
+		dataSets.add(new LineDataSet(dataEntries.get(0), "ÌåÖØ"));
+		dataSets.add(new LineDataSet(dataEntries.get(1), "ÌåÖ¬ÂÊ"));
 		dataSets.add(new LineDataSet(dataEntries.get(2), "BMI"));
 		for (int i = 0; i < dataSets.size(); ++i) {
 			dataSets.get(i).setColor(colors[i]);
@@ -102,7 +102,7 @@ public class BodyFatMonitorActivity extends Activity {
 		leftAxis.setValueFormatter(new MyYAxisValueFormatter());
 		// target line
 		LimitLine targetLine185 = new LimitLine(18.5f, "18.5");
-		LimitLine targetLine249 = new LimitLine(24.9f, "140");
+		LimitLine targetLine249 = new LimitLine(24.9f, "24.9");
 		targetLine185.setLineColor(colors[3]);
 		targetLine185.setLineWidth((float) 0.5);
 		targetLine185.setTextColor(colors[6]);
@@ -117,7 +117,7 @@ public class BodyFatMonitorActivity extends Activity {
 		myChart.setDescription("");
 		myChart.setScaleEnabled(false);
 		myChart.getLegend().setFormSize(12f);
-
+		myChart.animateXY(2000, 2000);
 		myChart.notifyDataSetChanged();
 
 	}

@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.github.mikephil.charting.animation.Easing.EasingOption;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
@@ -28,7 +29,7 @@ public class BloodPressureMonitorActivity extends Activity{
 		double[][] values = {{141.0, 134.0, 126.0, 133.0, 122.0, 136.0, 134.0},
 		                      {111.0, 94.0, 116.0, 103.0, 112.0, 126.0, 114.0}, 
 		                      {72.0, 64.0, 86.0, 73.0, 92.0, 76, 60}};
-		String[] labels = {"周日" , "周一","周二", "周三",  "周四", "周五", "周六"};
+		String[] labels = {"7" , "1","2", "3",  "4", "5", "6"};
 		LineChart myChart = (LineChart) findViewById(R.id.bloodPressureAnalysisMonitor);
 		
 		setChart(myChart, values, labels);
@@ -82,9 +83,9 @@ public class BloodPressureMonitorActivity extends Activity{
 		}
 		
 		ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
-		dataSets.add(new LineDataSet(dataEntries.get(0), "收缩压"));
-		dataSets.add(new LineDataSet(dataEntries.get(1), "舒张压"));
-		dataSets.add(new LineDataSet(dataEntries.get(2), "心率"));
+		dataSets.add(new LineDataSet(dataEntries.get(0), "����ѹ"));
+		dataSets.add(new LineDataSet(dataEntries.get(1), "����ѹ"));
+		dataSets.add(new LineDataSet(dataEntries.get(2), "����"));
 		for(int i=0;i<dataSets.size();++i){
 			dataSets.get(i).setColor(colors[i]);
 			dataSets.get(i).setDrawCircleHole(false);
@@ -134,8 +135,7 @@ public class BloodPressureMonitorActivity extends Activity{
 		myChart.setDescription("");
 		myChart.setScaleEnabled(false);
 		myChart.getLegend().setFormSize(12f);
-		
-		
+		myChart.animateXY(2000, 2000, EasingOption.Linear, EasingOption.Linear);
 		
 		
 		myChart.notifyDataSetChanged();

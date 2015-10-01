@@ -60,8 +60,8 @@ public class BodyFatAnalysisCurveActivity extends Activity{
 		}
 
 		ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
-		dataSets.add(new LineDataSet(dataEntries.get(0), "ä½“é‡ (kg)"));
-		dataSets.add(new LineDataSet(dataEntries.get(1), "ä½“è„‚ç‡"));
+		dataSets.add(new LineDataSet(dataEntries.get(0), "ÌåÖØ(kg)"));
+		dataSets.add(new LineDataSet(dataEntries.get(1), "ÌåÖ¬ÂÊ"));
 		dataSets.add(new LineDataSet(dataEntries.get(2), "BMI"));
 		
 		for (int i = 0; i < dataSets.size(); ++i) {
@@ -126,7 +126,7 @@ public class BodyFatAnalysisCurveActivity extends Activity{
 		myChart.setDescription("");
 		myChart.setScaleEnabled(false);
 		myChart.getLegend().setFormSize(12f);
-
+		myChart.animateXY(2000, 2000);
 		myChart.notifyDataSetChanged();
 
 		

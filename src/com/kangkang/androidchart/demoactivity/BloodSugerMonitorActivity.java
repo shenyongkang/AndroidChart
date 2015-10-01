@@ -8,6 +8,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.animation.Easing.EasingOption;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend.LegendPosition;
@@ -30,7 +31,7 @@ public class BloodSugerMonitorActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.blood_suger_monitor);
 		
-		String[] labels = {"周日" , "周一","周二", "周三",  "周四", "周五", "周六"};
+		String[] labels = {"7" , "1","2", "3",  "4", "5", "6"};
 		double[] values = {5.0, 3.5, 5.9, 12.0, 6.40, 8.8, 4.0};
 		PieChart pieChart = (PieChart) findViewById(R.id.bloodSugerMonitorChart1);
 		LineChart lineChart = (LineChart) findViewById(R.id.bloodSugerMonitorChart2);
@@ -132,6 +133,8 @@ public class BloodSugerMonitorActivity extends Activity{
 		lineChart.getLegend().setPosition(LegendPosition.BELOW_CHART_LEFT);
 		lineChart.getLegend().setEnabled(false);
 		lineChart.setScaleEnabled(false);
+		lineChart.animateXY(2000, 2000, EasingOption.Linear, EasingOption.Linear);
+
 		lineChart.notifyDataSetChanged();
 		
 

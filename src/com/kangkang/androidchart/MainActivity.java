@@ -25,6 +25,7 @@ import com.kangkang.androidchart.demoactivity.BloodPressureAnalysisCurveActivity
 import com.kangkang.androidchart.demoactivity.BloodPressureAnalysisDiagramActivity;
 import com.kangkang.androidchart.demoactivity.BloodPressureMonitorActivity;
 import com.kangkang.androidchart.demoactivity.BloodSugerAnalysisCurveActivity;
+import com.kangkang.androidchart.demoactivity.BloodSugerAnalysisDiagramActivity;
 import com.kangkang.androidchart.demoactivity.BloodSugerMonitorActivity;
 import com.kangkang.androidchart.demoactivity.BodyFatAnalysisCurveActivity;
 import com.kangkang.androidchart.demoactivity.BodyFatAnalysisDiagramActivity;
@@ -54,35 +55,35 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		
 		
 
-		objects.add(new ContentItem("HomePageChartActivity",
+		objects.add(new ContentItem("1 HomePageChartActivity",
 				""));
-		objects.add(new ContentItem("BloodPressureAnalysisCurveActivity)",
+		objects.add(new ContentItem("2 BloodPressureAnalysisCurveActivity)",
 				""));
-		objects.add(new ContentItem("BloodPressureAnalysisDiaramActivity",
+		objects.add(new ContentItem("3 BloodPressureAnalysisDiaramActivity",
 				""));
-		objects.add(new ContentItem("BloodPressureMonitorActivity",
+		objects.add(new ContentItem("4 BloodPressureMonitorActivity",
 				""));
-		objects.add(new ContentItem("BloodSugerAnalysisCurveActivity",
+		objects.add(new ContentItem("5 BloodSugerAnalysisCurveActivity",
 				""));
-		objects.add(new ContentItem("BloodSugerAnalysisDiagramActivity",
+		objects.add(new ContentItem("6 BloodSugerAnalysisDiagramActivity",
 				""));
-		objects.add(new ContentItem("BloodSugerMonitorActivity",
+		objects.add(new ContentItem("7 BloodSugerMonitorActivity",
 				""));
-		objects.add(new ContentItem("BodyFatAnalysisCurveActivity",
+		objects.add(new ContentItem("8 BodyFatAnalysisCurveActivity",
 				""));
-		objects.add(new ContentItem("BodyFatAnalysisDiagramActivity",
+		objects.add(new ContentItem("9 BodyFatAnalysisDiagramActivity",
 				""));
-		objects.add(new ContentItem("BodyFatMonitorActivity",
+		objects.add(new ContentItem("10 BodyFatMonitorActivity",
 				""));
-		objects.add(new ContentItem("BodyHeightActivity",
+		objects.add(new ContentItem("11 BodyHeightActivity",
 				""));
-		objects.add(new ContentItem("BodyWeightActivity",
+		objects.add(new ContentItem("12 BodyHeightAnalysisActivity",
 				""));
-		objects.add(new ContentItem("BodyHeightAnalysisActivity",
+		objects.add(new ContentItem("13 BodyWeightActivity",
 				""));
-		objects.add(new ContentItem("TemperatureActivity",
+		objects.add(new ContentItem("14 TemperatureActivity",
 				""));
-		objects.add(new ContentItem("TemperatureAnalysisActivity",
+		objects.add(new ContentItem("15 TemperatureAnalysisActivity",
 				""));
 
 
@@ -141,7 +142,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			startActivity(i);
 			break;
 		case 5:
-			i = new Intent(this, BloodPressureAnalysisDiagramActivity.class);
+			i = new Intent(this, BloodSugerAnalysisDiagramActivity.class);
 			startActivity(i);
 			break;
 		case 6:

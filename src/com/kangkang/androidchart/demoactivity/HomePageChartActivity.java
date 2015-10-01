@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.github.mikephil.charting.animation.Easing.EasingOption;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis.XAxisPosition;
 import com.github.mikephil.charting.components.YAxis;
@@ -106,7 +107,7 @@ public class HomePageChartActivity extends Activity{
 		myChart.setDescription("");
 		myChart.getLegend().setEnabled(false);
 		myChart.setScaleEnabled(false);	
-		
+		myChart.animateXY(2000, 2000, EasingOption.Linear, EasingOption.Linear);
 		
 		
 		ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
