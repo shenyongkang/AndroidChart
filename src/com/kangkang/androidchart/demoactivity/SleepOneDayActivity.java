@@ -119,7 +119,12 @@ public class SleepOneDayActivity extends Activity {
 		}
 		BarDataSet dataSet = new BarDataSet(dataEntries, "");
 		dataSet.setBarSpacePercent(0f);
-		dataSet.setColors(colorsList);
+		int[] colorsListNew = new int[colorsList.size()];
+		for(int i=0;i<colorsList.size();++i){
+			colorsListNew[i] = colorsList.get(i);
+		}
+		
+		dataSet.setColors(colorsListNew);
 		dataSet.setDrawValues(false);
 		ArrayList<BarDataSet> dataSets = new ArrayList<BarDataSet>();
 		dataSets.add(dataSet);	
