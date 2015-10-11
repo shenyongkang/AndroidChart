@@ -34,6 +34,8 @@ import com.kangkang.androidchart.demoactivity.BodyHeightActivity;
 import com.kangkang.androidchart.demoactivity.BodyHeightAnalysisActivity;
 import com.kangkang.androidchart.demoactivity.BodyWeightActivity;
 import com.kangkang.androidchart.demoactivity.HomePageChartActivity;
+import com.kangkang.androidchart.demoactivity.SleepOneDayActivity;
+import com.kangkang.androidchart.demoactivity.SleepOneWeekActivity;
 import com.kangkang.androidchart.demoactivity.TemperatureActivity;
 import com.kangkang.androidchart.demoactivity.TemperatureAnalysisActivity;
 
@@ -84,6 +86,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		objects.add(new ContentItem("14 TemperatureActivity",
 				""));
 		objects.add(new ContentItem("15 TemperatureAnalysisActivity",
+				""));
+		objects.add(new ContentItem("16 SleepOneDayActivity",
+				""));
+		objects.add(new ContentItem("17 SleepOneWeekActivity",
 				""));
 
 
@@ -179,6 +185,14 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			break;
 		case 14:
 			i = new Intent(this, TemperatureAnalysisActivity.class);
+			startActivity(i);
+			break;
+		case 15:
+			i = new Intent(this, SleepOneDayActivity.class);
+			startActivity(i);
+			break;
+		case 16:
+			i = new Intent(this, SleepOneWeekActivity.class);
 			startActivity(i);
 			break;
 			

@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/temperatureAnalysis"
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/sleepOneDay"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     

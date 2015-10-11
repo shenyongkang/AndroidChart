@@ -82,6 +82,14 @@
             android:name="com.kangkang.androidchart.demoactivity.TemperatureAnalysisActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.kangkang.androidchart.demoactivity.SleepOneDayActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.kangkang.androidchart.demoactivity.SleepOneWeekActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

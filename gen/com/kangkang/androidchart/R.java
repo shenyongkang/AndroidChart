@@ -25,7 +25,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080016;
+        public static final int action_settings=0x7f08001b;
         public static final int bloodFatAnalysisDiagramChart1=0x7f08000d;
         public static final int bloodFatAnalysisDiagramChart2=0x7f08000e;
         public static final int bloodFatAnalysisDiagramChart3=0x7f08000f;
@@ -43,11 +43,16 @@ public final class R {
         public static final int bodyFatAnalysisCurve=0x7f08000c;
         public static final int bodyFatMonitor=0x7f080010;
         public static final int bodyHeight=0x7f080011;
-        public static final int bodyWeight=0x7f080012;
-        public static final int homePageChart=0x7f080013;
+        public static final int bodyHeightAnalysis=0x7f080012;
+        public static final int bodyWeight=0x7f080013;
+        public static final int homePageChart=0x7f080014;
         public static final int listView1=0x7f080000;
-        public static final int tvDesc=0x7f080015;
-        public static final int tvName=0x7f080014;
+        public static final int sleepOneDay=0x7f080017;
+        public static final int sleepOneWeek=0x7f080018;
+        public static final int temperature=0x7f080019;
+        public static final int temperatureAnalysis=0x7f08001a;
+        public static final int tvDesc=0x7f080016;
+        public static final int tvName=0x7f080015;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -65,8 +70,10 @@ public final class R {
         public static final int body_weight=0x7f03000c;
         public static final int home_page_chart=0x7f03000d;
         public static final int list_item=0x7f03000e;
-        public static final int temperature=0x7f03000f;
-        public static final int temperature_analysis=0x7f030010;
+        public static final int sleep_one_day=0x7f03000f;
+        public static final int sleep_one_week=0x7f030010;
+        public static final int temperature=0x7f030011;
+        public static final int temperature_analysis=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f070000;
