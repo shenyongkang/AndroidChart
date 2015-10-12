@@ -26,7 +26,7 @@ public class SleepOneDayActivity extends Activity {
 		
 		
 		setContentView(R.layout.sleep_one_day);
-		double[] duration = {100.0,10,0, 20, 50, 100, 50};
+		double[] duration = {100.0, 10.0, 20, 50, 100, 50};
 		String[] type = { "N" , "A", "D", "S",  "D", "A"};
 		HorizontalBarChart myChart = (HorizontalBarChart) findViewById(R.id.sleepOneDay);
 
@@ -50,7 +50,7 @@ public class SleepOneDayActivity extends Activity {
 		String[] dataLabels = {"","","",""};
 		ArrayList<Integer> colorsList = new ArrayList<Integer>();
 		for(int i=0;i<sleepDuration.length;++i){
-			if(sleepType.equals("S")){
+			if(sleepType[i].equals("S")){
 				values.get(0).add((float) (float) sleepDuration[i]);
 				values.get(1).add((float) sleepDuration[i]);
 				values.get(2).add(0.0f);
@@ -64,7 +64,7 @@ public class SleepOneDayActivity extends Activity {
 				colorsList.add(colors[4]);
 				
 			}
-			if(sleepType.equals("D")){
+			if(sleepType[i].equals("D")){
 				values.get(0).add((float) sleepDuration[i]);
 				values.get(1).add((float) sleepDuration[i]);
 				values.get(2).add((float) sleepDuration[i]);
@@ -78,7 +78,7 @@ public class SleepOneDayActivity extends Activity {
 				colorsList.add(colors[4]);
 				
 			}
-			if(sleepType.equals("A")){
+			if(sleepType[i].equals("A")){
 				values.get(0).add((float) sleepDuration[i]);
 				values.get(1).add(0.0f);
 				values.get(2).add(0.0f);
@@ -92,7 +92,7 @@ public class SleepOneDayActivity extends Activity {
 				colorsList.add(colors[4]);
 				
 			}
-			if(sleepType.equals("S")){
+			if(sleepType[i].equals("N")){
 				values.get(0).add(0.0f);
 				values.get(1).add(0.0f);
 				values.get(2).add(0.0f);
@@ -109,12 +109,17 @@ public class SleepOneDayActivity extends Activity {
 			
 		}
 		ArrayList<BarEntry> dataEntries = new ArrayList<BarEntry>();
+		
 
 		for (int i = 0; i < values.size(); ++i) {
+			System.out.println(values.get(i));
 			float[] fList = new float[values.get(i).size()];
-			for(int j=0;i<values.get(j).size();++j){
-				fList[j] = values.get(j).get(j);
+			
+			for(int j=0;j<values.get(i).size();++j){
+				fList[j] = values.get(i).get(j);
+				System.out.println(fList[j]);
 			}
+//			System.out.println(fList);
 			dataEntries.add(new BarEntry(fList,i));
 		}
 		BarDataSet dataSet = new BarDataSet(dataEntries, "");
@@ -163,9 +168,6 @@ public class SleepOneDayActivity extends Activity {
 		barChart.notifyDataSetChanged();
 
 	}
-
-
-		
 
 
 }
