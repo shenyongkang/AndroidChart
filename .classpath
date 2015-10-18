@@ -5,6 +5,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="/Users/kk/Android code/AndroidChart/libs/mpandroidchartlibrary-2-1-4.jar"/>
+	<classpathentry kind="lib" path="M:/android chart/AndroidChart/libs/mpandroidchartlibrary-2-1-4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

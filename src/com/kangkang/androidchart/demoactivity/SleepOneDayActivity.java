@@ -26,6 +26,9 @@ public class SleepOneDayActivity extends Activity {
 		
 		
 		setContentView(R.layout.sleep_one_day);
+		//N A D S 分别代表 空、活动、深度睡眠、轻度睡眠
+		//duration 代表从零点开始 与上面标号对应的时间 以分钟计
+		//duration type 数组长度一致
 		double[] duration = {100.0, 10.0, 20, 50, 100, 50};
 		String[] type = { "N" , "A", "D", "S",  "D", "A"};
 		HorizontalBarChart myChart = (HorizontalBarChart) findViewById(R.id.sleepOneDay);
@@ -50,44 +53,45 @@ public class SleepOneDayActivity extends Activity {
 		String[] dataLabels = {"","","",""};
 		ArrayList<Integer> colorsList = new ArrayList<Integer>();
 		for(int i=0;i<sleepDuration.length;++i){
+			float duration = (float) (sleepDuration[i]/60.0);
 			if(sleepType[i].equals("S")){
-				values.get(0).add((float) (float) sleepDuration[i]);
-				values.get(1).add((float) sleepDuration[i]);
+				values.get(0).add((float) (float) duration);
+				values.get(1).add((float) duration);
 				values.get(2).add(0.0f);
 				values.get(3).add(0.0f);
 				
 				values.get(0).add(0.0f);
 				values.get(1).add(0.0f);
-				values.get(2).add((float) sleepDuration[i]);
-				values.get(3).add((float) sleepDuration[i]);
+				values.get(2).add((float) duration);
+				values.get(3).add((float) duration);
 				colorsList.add(colors[1]);
 				colorsList.add(colors[4]);
 				
 			}
 			if(sleepType[i].equals("D")){
-				values.get(0).add((float) sleepDuration[i]);
-				values.get(1).add((float) sleepDuration[i]);
-				values.get(2).add((float) sleepDuration[i]);
+				values.get(0).add((float) duration);
+				values.get(1).add((float) duration);
+				values.get(2).add((float) duration);
 				values.get(3).add(0.0f);
 				
 				values.get(0).add(0.0f);
 				values.get(1).add(0.0f);
 				values.get(2).add(0.0f);
-				values.get(3).add((float) sleepDuration[i]);
+				values.get(3).add((float) duration);
 				colorsList.add(colors[0]);
 				colorsList.add(colors[4]);
 				
 			}
 			if(sleepType[i].equals("A")){
-				values.get(0).add((float) sleepDuration[i]);
+				values.get(0).add((float) duration);
 				values.get(1).add(0.0f);
 				values.get(2).add(0.0f);
 				values.get(3).add(0.0f);
 				
 				values.get(0).add(0.0f);
-				values.get(1).add((float) sleepDuration[i]);
-				values.get(2).add((float) sleepDuration[i]);
-				values.get(3).add((float) sleepDuration[i]);
+				values.get(1).add((float) duration);
+				values.get(2).add((float) duration);
+				values.get(3).add((float) duration);
 				colorsList.add(colors[2]);
 				colorsList.add(colors[4]);
 				
@@ -98,10 +102,10 @@ public class SleepOneDayActivity extends Activity {
 				values.get(2).add(0.0f);
 				values.get(3).add(0.0f);
 				
-				values.get(0).add((float) sleepDuration[i]);
-				values.get(1).add((float) sleepDuration[i]);
-				values.get(2).add((float) sleepDuration[i]);
-				values.get(3).add((float) sleepDuration[i]);
+				values.get(0).add((float) duration);
+				values.get(1).add((float) duration);
+				values.get(2).add((float) duration);
+				values.get(3).add((float) duration);
 				colorsList.add(colors[4]);
 				colorsList.add(colors[4]);
 				
@@ -112,7 +116,6 @@ public class SleepOneDayActivity extends Activity {
 		
 
 		for (int i = 0; i < values.size(); ++i) {
-			System.out.println(values.get(i));
 			float[] fList = new float[values.get(i).size()];
 			
 			for(int j=0;j<values.get(i).size();++j){
@@ -160,10 +163,12 @@ public class SleepOneDayActivity extends Activity {
 		xAxis.setGridColor(colors[3]);
 		xAxis.setAxisLineWidth(0.5f);
 		xAxis.setAxisLineColor(colors[3]);
+		
 		barChart.setBackgroundColor(colors[4]);
 		barChart.setGridBackgroundColor(colors[4]);
 		barChart.getLegend().setEnabled(false);
 		barChart.setScaleEnabled(false);
+		barChart.setDescription("");
 		barChart.animateXY(2000, 2000);
 		barChart.notifyDataSetChanged();
 

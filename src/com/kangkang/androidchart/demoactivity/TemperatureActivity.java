@@ -97,7 +97,7 @@ public class TemperatureActivity extends Activity {
 		myChart.setBackgroundColor(colors[4]);
 		myChart.setGridBackgroundColor(colors[4]);
 		myChart.getLegend().setEnabled(false);
-//		myChart.animateXY(2000,1000);
+		myChart.animateX(2000);
 //		myChart.animateXY(2000, 2000, EasingOption., easingY);
 		myChart.notifyDataSetChanged();
 
